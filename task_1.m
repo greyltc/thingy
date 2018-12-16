@@ -9,11 +9,9 @@ spent = 0;
 currentPrice = 1;
 
 % start an infinite loop
-while true
-    % break out of the infinite loop if we're about to go over budget
-    if (spent + currentPrice) > budget
-        break
-    end
+while (spent + currentPrice) <= budget
+
+
     foobarsBought = foobarsBought + 1; % buy a foobar
     spent = spent + currentPrice; % pay for the foobbar
     currentPrice = round(currentPrice*increaseFactor,2); % calcualte the price for the next foobar
@@ -23,3 +21,4 @@ end
 change = budget - spent;
 
 end
+
