@@ -2,7 +2,6 @@ function task_2
 
 [FileName,PathName,FilterIndex] = uigetfile('*.csv');
 inputFile = strcat(PathName, FileName);
-%inputFile = 'data/UK-Temperatures.csv';
 
 % weights for weighted average these MUST sum to unity
 weights = [
