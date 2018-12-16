@@ -1,5 +1,9 @@
 function task_2
 
+[FileName,PathName,FilterIndex] = uigetfile('*.csv');
+inputFile = strcat(PathName, FileName);
+%inputFile = 'data/UK-Temperatures.csv';
+
 % weights for weighted average these MUST sum to unity
 weights = [
     0.14; % Brice Norton
@@ -13,7 +17,7 @@ weights = [
 assert(sum(weights) == 1)
 
 % read in temperature data into table
-IN = readtable('data/UK-Temperatures.csv');
+IN = readtable(inputFile);
 TT = table2timetable(IN); % convert to timetable
 
 TT.Properties.DimensionNames(1) = {'Date'}; % change time header because OCD
